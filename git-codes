@@ -1,0 +1,205 @@
+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 (token /password)
+
+Laeequdevops (usre name)
+
+       sudo su
+    1  yum install git
+    2  git --version
+    3  git config --global user.name Laeeque
+    4  git config --global user.email Laeeque@gmail.com
+    5  git config --list
+    6  mkdir laeeq
+    7  cd laeeq/
+    8  git init
+    9  cat >file1
+   10  git status
+   11  git add .
+   12  git status
+   13  git commit -m "this is first code"
+   14  git log
+   15  git show  bc2f212572468e785ec3bd
+
+    
+   18  git remote add origin https://github.com/Laeequdevops/New-laeeque-.git
+   19  git remote -v
+   
+   21  git push -u origin master (First code pushed to the github)
+                                  
+   
+   35  ls
+   36  cat >file2  (this is a second code)
+   37  ls
+   38  git status
+
+   39  git add .
+   40  git status
+   41  git log
+   42  git show bc2f212572468e785ec3bdd444be0ccf4e7
+   43  git log
+   44  git show
+   45  git commit -m "this is second code"
+   46  git log
+   47  git show 0051c22a116bd775d57a55d
+   48  git show
+   49  git push -u origin master      (second code pushed to the github)
+   50  git show
+   51  git log
+
+                                                
+                                                1 pull steps
+
+    1  yum install git
+    2  git config --global user.name Shaikh
+    3  git config --global user.email shaih@gmail.com
+    4  git config --list
+    5  mkdir shaikh
+    6  ls
+    7  cd shaikh
+    8  git init
+   
+   10  git remote add origin https://github.com/Laeequdevops/New-laeeque-.git  (this is for connecting git to github)
+   11  git remote -v
+   12  git log
+   13  git pull origin master                                           don't use {{git push -f origin master}}
+   14  ls
+   15  git log
+   16  git show  0051c22a116bd775d57a55df1
+
+
+                                      add third code and again push
+
+
+   24  git --version
+   25  which git
+   26  git status
+   27  service git status
+   
+   31  cd shaikh/
+   32  ls
+   33  cat >file2
+
+   35  cat file2
+   36  git status
+   37  git add .
+   38  git status
+   39  git commit -m "this is third code"
+   40  git status
+   41  git log
+   42  git show
+   43  git remote -v
+   44  git push -u origin master
+
+
+                            pull 2nd time                                                                
+
+
+   54  ls
+   55  service git status
+   56  cd laeeq/
+   57  ls                                                                                       {if we pull in same directory it will replace
+                                                                                                 data also delete old data and add new data}
+
+   58  git init                                                                                  
+   59  git remote -v                                                                          [root@ip-172-31-9-207 laeeq]# git pull origin master
+   60  git pull origin master                                                                 remote: Enumerating objects: 5, done.
+   61  ls
+   62  cat file1
+   63  cat file2                                                                              remote: Counting objects: 100% (5/5), done.
+                                                                                              remote: Compressing objects: 100% (2/2), done.
+                                                                                              remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+                                                                                              Unpacking objects: 100% (3/3), 269 bytes | 269.00 KiB/s, done.
+                                                                                              From https://github.com/Laeequdevops/New-laeeque-
+                                                                                               * branch            master     -> FETCH_HEAD
+                                                                                                 0051c22..e375242  master     -> origin/master
+                                                                                              Updating 0051c22..e375242
+                                                                                              Fast-forward
+                                                                                               file2 | 3 +--
+                                                                                               1 file changed, 1 insertion(+), 2 deletions(- 
+
+
+
+
+
+                                          
+                                                       git push -u origin master  {{Error}}
+                                    
+
+                                              Username for 'https://github.com': Laeequdevops
+                                              Password for 'https://Laeequdevops@github.com':
+                                              To https://github.com/Laeequdevops/New-laeeque-.git
+                                               ! [rejected]        master -> master (fetch first)
+                                              error: failed to push some refs to 'https://github.com/Laeequdevops/New-laeeque-.git'
+                                              hint: Updates were rejected because the remote contains work that you do
+                                              hint: not have locally. This is usually caused by another repository pushing
+                                              hint: to the same ref. You may want to first integrate the remote changes
+                                              hint: (e.g., 'git pull ...') before pushing again.
+                                              hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+   
+
+                                                      don't use {{git push -f origin master}}
+
+
+                                               To https://github.com/Laeequdevops/New-laeeque-.git
+                                               + f7b6833...6faabdf master -> master (forced update)
+                                                
+
+                                                           {{solution of above error}}
+
+
+                                           [root@ip-172-31-9-207 dir6]# git pull --rebase origin master
+
+
+                                                    remote: Enumerating objects: 6, done.
+                                                    remote: Counting objects: 100% (6/6), done.
+                                                    remote: Compressing objects: 100% (2/2), done.
+                                                    remote: Total 6 (delta 0), reused 6 (delta 0), pack-reused 0
+                                                    Unpacking objects: 100% (6/6), 457 bytes | 457.00 KiB/s, done.
+                                                    From https://github.com/Laeequdevops/New-laeeque-
+                                                     * branch            master     -> FETCH_HEAD
+                                                     * [new branch]      master     -> origin/master
+
+                                                   Successfully rebased and updated refs/heads/master.
+
+                                                    [root@ip-172-31-9-207 dir6]# git push -u origin master
+
+                                                    Username for 'https://github.com': Laeequdevops
+                                                    Password for 'https://Laeequdevops@github.com':
+                                                    Enumerating objects: 4, done.
+                                                    Counting objects: 100% (4/4), done.
+                                                    Compressing objects: 100% (3/3), done.
+
+
+
+
+   34  mkdir new-dir
+   35  ls
+   36  cd new-dir/
+   37  ls
+   38  nano .gitignore
+   39  ls
+   40  ls -a
+   41  git add .gitignore
+   42  git init
+   43  git add .gitignore
+   44  git status
+   45  git commit -m "this is ignore files"
+   46  git status
+   47  git status
+   48  touch a1.txt b1.py c1.java c.txt
+   49  ls
+   50  git add .
+   51  git status
+   52  git commit -m "this is txt files only"
+   53  git config --list
+   54  git remote -v
+   55  git remote add origin https://github.com/Laeequdevops/new-repo.git
+   56  git remote -v
+   57  git push -u origin master
+   58  git push -f origin master
+
+ 
+
+
+
+
